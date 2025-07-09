@@ -45,22 +45,32 @@ Processes SFRA data for Line-to-Ground Fault (LDF), Inter-Disk Fault (IDF), No F
 
 🚀 Setup and Installation
 Clone the repository:
+
 git clone <repository_url>
 cd <repository_name>
 
 Create a virtual environment (recommended):
+
 python -m venv venv
-.\venv\Scripts\activate (Windows) or source venv/bin/activate (macOS/Linux)
+# On Windows:
+.\venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
 
 Install dependencies:
+
 pip install numpy pandas tensorflow scikit-learn matplotlib seaborn chardet openpyxl
 
 🏃 Usage
 Place your raw SFRA data: Organize raw SFRA files (CSV/XLSX) into subdirectories named by fault type (e.g., LDF/, SCF/).
 
-Create the processed dataset: Run python databaseCreation.py. Follow prompts for data_root_dir (e.g., .).
+Create the processed dataset: Run databaseCreation.py. Follow prompts for data_root_dir (e.g., .).
 
-Train the FCN model: Run python fcn_model_training.py. Training progress will display in the terminal. Plots and reports will be saved in fcn_model_output/.
+python databaseCreation.py
+
+Train the FCN model: Run fcn_model_training.py. Training progress will display in the terminal. Plots and reports will be saved in fcn_model_output/.
+
+python fcn_model_training.py
 
 📈 Results (Placeholder)
 Add your key performance metrics here after training, e.g.:
